@@ -1,0 +1,23 @@
+function createMarkup({ name, weather, main, sys, clouds }) {
+  return `<div class="weather__card">
+      <h2 class="city-name">${name}</h2>
+      <ul class="weather-info list">
+          <li class="weather-info-item">
+              <p class="temp">Температура: ${main.temp} <sup>&#176;</sup>С</p>
+          </li>
+          <li class="weather-info-item">
+              <p class="feels-like-temp">Ощущается как: ${main.feels_like} <sup>&#176;</sup>С</p>
+          </li>
+          <li class="weather-info-item">
+              <p class="sunrise-time">Восход солнца: ${sys.sunrise}</p>
+          </li>
+          <li class="weather-info-item">
+              <p class="sunset-time">Запад солнца: ${sys.sunset}</p>
+          </li>
+          <li class="weather-info-item">
+              <p class="clouds">Хмарность: ${clouds.all}%</p>
+          </li>
+          <li><img src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="${weather[0].description}" /></li>
+      </ul>
+  </div>`;
+}
